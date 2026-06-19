@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | K Steve Barbers</title>
+  <meta name="description" content="Browse cuts and styles from K Steve Barbers, filterable by category: fades, beards, and natural hair.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-item {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-line);
+      border-radius: 4px;
+      aspect-ratio: 4 / 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .gallery-item .tag {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      font-size: 0.78rem;
+      margin-bottom: 0.5rem;
+    }
+    .gallery-item .label {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+    .gallery-item.hidden-item {
+      display: none;
+    }
+    .filter-btn {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.85rem;
+      background-color: transparent;
+      border: 1px solid var(--color-line);
+      color: var(--color-stone);
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .filter-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-cream);
+    }
+    .filter-btn.active {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-bg);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-ksb navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">K STEVE <span>BARBERS</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="barbers.html">Barbers</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-book" href="contact.html">Book a Cut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow mb-2">Our Work</p>
+      <h1>Gallery</h1>
+      <p>A look at the styles we do most. Filter by category to see specific work.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="mb-4" id="filterBar">
+        <button class="filter-btn active" data-filter="all" type="button">All</button>
+        <button class="filter-btn" data-filter="fade" type="button">Fades</button>
+        <button class="filter-btn" data-filter="beard" type="button">Beards &amp; Shaves</button>
+        <button class="filter-btn" data-filter="natural" type="button">Natural Hair</button>
+      </div>
+
+      <div class="row g-3" id="galleryGrid">
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="fade">
+          <div class="gallery-item"><span class="tag">Fade</span><span class="label">Skin Fade</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="beard">
+          <div class="gallery-item"><span class="tag">Beard</span><span class="label">Lined Beard</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="natural">
+          <div class="gallery-item"><span class="tag">Natural</span><span class="label">Afro Shape Up</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="fade">
+          <div class="gallery-item"><span class="tag">Fade</span><span class="label">Low Taper</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="beard">
+          <div class="gallery-item"><span class="tag">Shave</span><span class="label">Hot Towel Shave</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="natural">
+          <div class="gallery-item"><span class="tag">Natural</span><span class="label">Locs Retwist</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="fade">
+          <div class="gallery-item"><span class="tag">Fade</span><span class="label">High Fade + Design</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="beard">
+          <div class="gallery-item"><span class="tag">Beard</span><span class="label">Beard + Trim Combo</span></div>
+        </div>
+        <div class="col-6 col-md-4 gallery-item-wrap" data-category="natural">
+          <div class="gallery-item"><span class="tag">Natural</span><span class="label">Curly Top Shape</span></div>
+        </div>
+      </div>
+
+      <p class="text-stone mt-4" style="font-size:0.88rem;">
+        Photos coming soon. These placeholders show how the finished gallery will be organized.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-tight bg-surface" style="border-top:1px solid var(--color-line);">
+    <div class="container text-center">
+      <h2 class="mb-3">Want a style from the gallery?</h2>
+      <p class="text-stone mb-4">Show your barber a photo, or just describe what you want.</p>
+      <a href="contact.html" class="btn-ksb-primary">Visit the Shop</a>
+    </div>
+  </section>
+
+  <footer class="footer-ksb">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6>K Steve Barbers</h6>
+          <p class="text-stone" style="font-size:0.92rem;">Kabarnet Road, Nairobi<br>Walk-ins welcome, Mon to Sat.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Site</h6>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services &amp; Prices</a>
+          <a href="barbers.html">Our Barbers</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="col-md-4">
+          <h6>Get In Touch</h6>
+          <a href="reviews.html">Customer Reviews</a>
+          <a href="contact.html">Contact &amp; Location</a>
+          <a href="tel:+254700000000">+254 700 000 000</a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between flex-wrap">
+        <span>&copy; 2026 K Steve Barbers. All rights reserved.</span>
+        <span>Built by Daryl, Web App Dev Project</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
