@@ -20,14 +20,25 @@
       btn.classList.add("active");
 
       // show/hide gallery items based on category
+      let visibleCount = 0;
       galleryItems.forEach(function (item) {
         const category = item.getAttribute("data-category");
         if (filter === "all" || category === filter) {
           item.classList.remove("hidden-item");
+          visibleCount++;
         } else {
           item.classList.add("hidden-item");
         }
       });
-    });
-  });
-})();
+
+      // show empty state message if nothing matched
+      const noResultsMsg = document.getElementById("noResultsMsg");
+      if (noResultsMsg) {
+        noResultsMsg.classList.toggle("d-none", visibleCount > 0);
+      }
+
+      // show empty state message if nothing matched
+      const noResultsMsg = document.getElementById("noResultsMsg");
+      if (noResultsMsg) {
+        noResultsMsg.classList.toggle("d-none", visibleCount > 0);
+      }
