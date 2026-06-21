@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daryl-musa.github.io/barbershop-project/sitemap.xml
