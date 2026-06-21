@@ -13,6 +13,7 @@
   const reasonSelect = document.getElementById("reasonSelect");
   const messageInput = document.getElementById("messageInput");
   const formSuccess = document.getElementById("formSuccess");
+  const charCounter = document.getElementById("charCounter");
 
   // Accepts Kenyan numbers like 0712345678, 0112345678, or +254712345678
   const phonePattern = /^(?:\+254|0)(7|1)\d{8}$/;
@@ -88,6 +89,9 @@
   emailInput.addEventListener("blur", validateEmail);
   reasonSelect.addEventListener("change", validateReason);
   messageInput.addEventListener("blur", validateMessage);
+  messageInput.addEventListener("input", function () {
+  charCounter.textContent = `${messageInput.value.length} characters`;
+});
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
