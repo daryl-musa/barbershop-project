@@ -39,3 +39,12 @@
     }, 150);
   });
 })();
+document.querySelectorAll('#navMain .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navMain = document.getElementById('navMain');
+    if (navMain.classList.contains('show')) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navMain) || new bootstrap.Collapse(navMain);
+      bsCollapse.hide();
+    }
+  });
+});
