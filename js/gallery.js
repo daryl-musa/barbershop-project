@@ -36,3 +36,6 @@
       if (noResultsMsg) {
         noResultsMsg.classList.toggle("d-none", visibleCount > 0);
       }
+        });
+  });
+})();
