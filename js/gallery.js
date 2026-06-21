@@ -36,9 +36,3 @@
       if (noResultsMsg) {
         noResultsMsg.classList.toggle("d-none", visibleCount > 0);
       }
-
-      // show empty state message if nothing matched
-      const noResultsMsg = document.getElementById("noResultsMsg");
-      if (noResultsMsg) {
-        noResultsMsg.classList.toggle("d-none", visibleCount > 0);
-      }
