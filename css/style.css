@@ -304,3 +304,9 @@ textarea:focus-visible {
 .back-to-top.show {
   display: flex;
 }
+.back-to-top {
+  display: none;
+}
+.back-to-top.show {
+  display: block;
+}

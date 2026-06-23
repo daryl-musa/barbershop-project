@@ -48,3 +48,22 @@ document.querySelectorAll('#navMain .nav-link').forEach(link => {
     }
   });
 });
+/* ==========================================================================
+   Back to top button
+   ========================================================================== */
+(function () {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
