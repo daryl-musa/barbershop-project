@@ -120,6 +120,12 @@ textarea:focus-visible {
 
 .navbar-toggler {
   border-color: var(--color-line);
+  .navbar-toggler {
+  border-color: var(--color-line);
+  padding: 0.55rem 0.75rem;
+  min-width: 44px;
+  min-height: 44px;
+}
 }
 
 /* ---------- Footer ---------- */
