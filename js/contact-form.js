@@ -3,7 +3,7 @@
    Feature 3: Contact form validation
    ========================================================================== */
 
-(function () {
+(function () {const submitBtn = document.getElementById("submitBtn");
   const form = document.getElementById("contactForm");
   if (!form) return; // only runs on contact.html
 
@@ -106,12 +106,20 @@
 
     const allValid = checks.every(Boolean);
 
-    if (allValid) {
-      formSuccess.classList.add("show");
-      form.reset();
-      formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+   if (allValid) {
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      setTimeout(function () {
+        formSuccess.classList.add("show");
+        form.reset();
+        formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }, 900);
     } else {
       formSuccess.classList.remove("show");
-    }
+    } 
   });
 })();
